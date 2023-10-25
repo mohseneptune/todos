@@ -1,0 +1,23 @@
+# Cache directories
+*cache*/
+
+
+# Local development settings
+.env
+
+# Dependency directories
+venv/
+env/
+env.bak/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Compiled Python files
+*.pyc
+
+# Logs
+*.log

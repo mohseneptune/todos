@@ -1,0 +1,72 @@
+[tool.poetry]
+name = "todos"
+version = "0.1.0"
+description = ""
+authors = ["mohseneptune <mohseneptune@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.104.0"
+pydantic-settings = "^2.0.3"
+sqlalchemy = "^2.0.22"
+uvicorn = "^0.23.2"
+psycopg2 = "^2.9.9"
+psycopg = "^3.1.12"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.10.1"
+pylint = "^3.0.2"
+mypy = "^1.6.1"
+isort = "^5.12.0"
+pytest = "^7.4.2"
+pre-commit = "^3.5.0"
+alembic = "^1.12.0"
+colorlog = "^6.7.0"
+httpx = "^0.25.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+
+[tool.black]
+line-length = 88
+target-version = ['py311'] # Target Python version
+string-style = "double" # How to handle string quoting
+include-trailing-comma = true # Include a trailing comma on multi-line objects
+
+[tool.isort]
+profile = 'black'
+
+[tool.mypy]
+warn_redundant_casts = true
+warn_unused_ignores = false
+check_untyped_defs = true
+ignore_missing_imports = true
+# disallow_untyped_defs = true
+
+[tool.pylint]
+load-plugins = [
+    "pylint.extensions.docparams",
+    "pylint.extensions.mccabe",
+    "pylint.extensions.redefined_variable_type"
+]
+disable = [
+    "import-error",
+    "missing-function-docstring",
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "too-many-instance-attributes",
+    "too-few-public-methods"
+]
+
+[tool.pylint.mccabe]
+min-similarity-lines = 10
+
+
+[tool.pylint.design]
+max-line-length = 88

@@ -1,0 +1,26 @@
+{
+  "python.analysis.extraPaths": [
+    "./src"
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "black-formatter.args": [
+    "--config",
+    "${workspaceFolder}/pyproject.toml"
+  ],
+  "isort.args": [
+    "--settings-file",
+    "${workspaceFolder}/pyproject.toml"
+  ],
+  "mypy-type-checker.args": [
+    "--config-file=${workspaceFolder}/pyproject.toml"
+  ],
+  "pylint.args": [
+    "--rcfile=${workspaceFolder}/pyproject.toml"
+  ]
+}
